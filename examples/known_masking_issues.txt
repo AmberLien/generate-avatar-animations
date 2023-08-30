@@ -11,3 +11,6 @@ and body properly.
 There seems to be some hairstyles that are wider than the default width of the bounding_box.
 The code to generate the animations will need to be updated alongside the mask templates to
 account for this.
+
+One piece outfits (such as dresses) separate automatically. This appears to be due to
+the automatic merging and not with the mask templates.
