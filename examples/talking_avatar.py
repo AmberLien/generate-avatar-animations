@@ -37,8 +37,10 @@ def generate_image(input_url, id, path_to_image):
             new_datas.append(item)
 
     img.putdata(new_datas)
-    img.save(f'{path_to_image}/{id}.png', 'PNG')
-    return img
+    res = Image.new(img.mode, (img.width, img.height + 50), (255, 255, 255))
+    res.paste(img, (0, 50))
+    res.save(f'{path_to_image}/{id}.png', 'PNG')
+    return res
 
 
 # Function to merge masks using a template
@@ -151,7 +153,7 @@ def image_to_annotations(img_fn: str, out_dir: str, path_to_image, url) -> None:
     logging.info(msg)
 
     # calculate the coordinates of the character bounding box
-    l, t, r, b = [145, 31, 474, 950]
+    l, t, r, b = [0, 0, 660, 1103]
 
     # dump the bounding box results to file
     with open(str(outdir/'bounding_box.yaml'), 'w') as f:

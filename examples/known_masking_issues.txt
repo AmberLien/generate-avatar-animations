@@ -14,3 +14,6 @@ account for this.
 
 One piece outfits (such as dresses) separate automatically. This appears to be due to
 the automatic merging and not with the mask templates.
+
+Some costumes are too bulky, resulting in the same masking issue occuring on 
+body type 5.
